@@ -9,7 +9,7 @@ def get_data():
         src_dir = os.path.join(module_dir, "get_input")
         sys.path.insert(0, src_dir)
         import get_input
-        input_data = get_input.get_input(2023, 1)
+        input_data = get_input.get_input(2023, 11)
         with open("data.txt", "w") as f:
             f.write(input_data)
     with open("data.txt", "r") as f:
