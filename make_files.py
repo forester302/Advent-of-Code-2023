@@ -30,10 +30,10 @@ def main():
 if __name__ == "__main__":
     main()
 '''
-REMAKE_OVERRIDE = True
+REMAKE_OVERRIDE = False
 
 
-folders = [i for i in pathlib.Path(os.getcwd()).iterdir() if i.is_dir() and not (".git" in str(i))]
+folders = [i for i in pathlib.Path(os.getcwd()).iterdir() if i.is_dir() and ("Day" in str(i))]
 
 
 for num, folder in enumerate(folders):
