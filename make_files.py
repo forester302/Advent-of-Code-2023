@@ -3,7 +3,6 @@ import pathlib
 
 YEAR = "2023"
 DAY_PLACEHOLDER = "DAY_GOES_HERE"
-DAY_PLACEHOLDER2 = "2ND TIME"
 TEMPLATE = f'''import os
 import sys
 
@@ -40,4 +39,4 @@ for num, folder in enumerate(folders):
     os.chdir(folder)
     if "main.py" not in os.listdir() or REMAKE_OVERRIDE:
         with open("main.py", "w") as f:
-            f.write(TEMPLATE.replace(DAY_PLACEHOLDER, str(num+1)).replace(DAY_PLACEHOLDER2, str(num+1).zfill(2)))
+            f.write(TEMPLATE.replace(DAY_PLACEHOLDER, str(num+1)))
