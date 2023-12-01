@@ -16,18 +16,10 @@ def get_data():
         import get_input
         input_data = get_input.get_input({YEAR}, {DAY_PLACEHOLDER})
         with open("data.txt", "w") as f:
-            f.write(input_data)
+            f.write(input_data.strip("\\n"))
     with open("data.txt", "r") as f:
         data = f.read()
     return data
-            
-
-def main():
-    data = get_data()
-    
-
-if __name__ == "__main__":
-    main()
 '''
 REMAKE_OVERRIDE = False
 
@@ -37,6 +29,6 @@ folders = [i for i in pathlib.Path(os.getcwd()).iterdir() if i.is_dir() and ("Da
 
 for num, folder in enumerate(folders):
     os.chdir(folder)
-    if "main.py" not in os.listdir() or REMAKE_OVERRIDE:
-        with open("main.py", "w") as f:
+    if "get_data.py" not in os.listdir() or REMAKE_OVERRIDE:
+        with open("get_data.py", "w") as f:
             f.write(TEMPLATE.replace(DAY_PLACEHOLDER, str(num+1)))
