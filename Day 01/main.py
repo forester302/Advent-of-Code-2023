@@ -4,13 +4,10 @@ def part1():
     data = [d for d in get_data.get_data().split("\n")]
     removablecharacters = "abcdefghijklmnopqrstuvwxyz"
     for i, d in enumerate(data):
-        print(d)
         for char in removablecharacters:
             d = d.replace(char, '')
-        print(d)
         data[i] = int(d[0] + d[-1])
-    print(data)
-    print(sum(data))
+    return sum(data)
 
 def part2():
     data = [d for d in get_data.get_data().split("\n")]
@@ -37,10 +34,11 @@ def part2():
         decodefunc = lambda x: x if x.isnumeric() else decode[x]
         output = int(str(decodefunc(foundnumbers[0])) + str(decodefunc(foundnumbers[-1])))
         data[i] = output
-    print(sum(data))
+    return sum(data)
 
 def main():
-    part2()
+    print(f"Part1: {part1()}")
+    print(f"Part2: {part2()}")
     
     
 if __name__ == "__main__":
