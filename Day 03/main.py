@@ -13,7 +13,7 @@ def get_number(loc, data):
     while 0 <= loc[0] < len(data) and 0 <= loc[1] < len(data[0]) and data[loc[0]][loc[1]] in NUMBERS:
         number += data[loc[0]][loc[1]]
         loc = loc[0], loc[1] + 1
-    return number or None
+    return number
 
 def check_up_down(loc, data):
     parts = []
