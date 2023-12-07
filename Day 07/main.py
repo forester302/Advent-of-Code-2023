@@ -14,7 +14,7 @@ decode = {
     "4": 2,
     "3": 1,
     "2": 0,
-    "J": -1
+    "J": 9
 }
 
 def add_to_list(order: list, card_type, newcard, bid):
@@ -95,5 +95,6 @@ def main(part2 = False):
 if __name__ == "__main__":
     start = time.perf_counter()
     print(f"Part1: {main()}")
+    decode["J"] = -1
     print(f"Part2: {main(True)}")
     print(f"Completed in: {time.perf_counter()-start}")
